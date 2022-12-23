@@ -11,3 +11,15 @@ ansible all -m user -a "name=rakhi state=present" -b
 ansible myservers[0] -m yum -a "pkg=htppd state=absent" -b
 ansible all -m setup -a "filter=*ip4*"
 ansible-playbook httpd-install.yml
+
+--------------
+
+ansible-vault create <playbook name> ---- craete new playbook with decrypt key
+
+ansible-vault rekey  <playbook name> --- change encrypt password
+
+ansible-vault view   <playbook name> --- to view the caontent of encrypt file
+
+ansible-vault encrypt  <playbook name> ---- we can create encrypt file with exiting playbook
+
+ansible-vault decrypt <playbook name> ---- uncrypt playbook
