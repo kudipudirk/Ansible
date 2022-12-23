@@ -1,0 +1,9 @@
+---
+- name: creating directory
+  hosts: all
+  become: true
+  tasks:
+    - name: Creating file 'rama'
+      file:
+        path: /home/myadmin/rama
+        state: directory

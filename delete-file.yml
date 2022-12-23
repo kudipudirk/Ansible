@@ -1,0 +1,9 @@
+---
+- name: delete file
+  hosts: all
+  become: true
+  tasks:
+    - name: Creating file 'rama.txt'
+      file:
+        path: /home/myadmin/rama.txt
+        state: absent

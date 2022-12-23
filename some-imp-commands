@@ -1,0 +1,13 @@
+ssh-copy-id myadmin@172.31.34.42
+vi /etc/ansible/hosts
+vi /etc/ansible/ansible.cfg
+ansible all --list-hosts
+ansible myserver[0] --list-hosts
+ssh myadmin@172.31.12.198
+ansible all -m command -a "<any linux command>" -b
+ansible myservers[0] -m command -a "sudo mkdir rakhi" -b
+ansible all -m yum -a "pkg=git state=present" -b
+ansible all -m user -a "name=rakhi state=present" -b
+ansible myservers[0] -m yum -a "pkg=htppd state=absent" -b
+ansible all -m setup -a "filter=*ip4*"
+ansible-playbook httpd-install.yml

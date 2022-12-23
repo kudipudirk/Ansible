@@ -1,0 +1,10 @@
+---
+- name: copying a file
+  hosts: webservers[0]
+  become: true
+  tasks:
+    - name: copying a file 'rama.txt'
+      copy:
+        src: /home/myadmin/create-file.yml
+        dest: /tmp/myadmin/
+

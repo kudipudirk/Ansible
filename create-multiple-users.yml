@@ -1,0 +1,14 @@
+---
+- name: create a multiple users
+  hosts: all
+  become: true
+
+  tasks:
+    - name: crate users
+      user:
+       name: "{{item}}"
+       state: present
+      with_items:
+        - user1
+        - user2
+        - user3

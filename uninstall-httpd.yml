@@ -1,0 +1,19 @@
+---
+- name: stopped service
+  hosts: all
+  become: true
+  tasks:
+    - name: stopping httpd service
+      service:
+        name: httpd
+        state: stopped
+
+    - name: uninstall httpd package
+      yum:
+        name: httpd
+        state: absent
+
+    - name: delete file
+      file:
+        path: /var/www/html/index.html
+        state: absent
